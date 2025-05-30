@@ -40,8 +40,11 @@ const App = () => {
     if (!user) {
       router("/");
     } else {
-      if (user.length && user.length) {
+      if (user.length && user) {
         router(location);
+      }else{
+                router(location);
+
       }
     }
 
