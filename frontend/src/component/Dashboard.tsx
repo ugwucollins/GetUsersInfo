@@ -1,19 +1,22 @@
 import { Link } from "react-router-dom";
 
-const Dashboard = ({ user }: any) => {
+const Dashboard = () => {
+  const location: any = localStorage.getItem("path");
+  const [user, setuser]: any = useState(JSON.parse(userName));
+  setuser
   return (
     <>
       <div className="w-full min-h-screen bg-black/10 flex justify-center items-center">
         <div className="w-auto px-14 rounded-2xl transition-all shadow-lg hover:shadow-2xl drop-shadow hover:drop-shadow-2xl py-14 bg-white flex flex-col gap-2">
           <span className="font-semibold">
-            Welcome, {user.length && user.firstName}
+            Welcome, {user && user.firstName}
           </span>
           <p>Your Information Has been Recoreded</p>
           <button className="w-full mt-3 rounded-full hover:shadow-lg hover:drop-shadow font-semibold hover:font-bold bg-black text-white py-2 px-4 transition-all duration-200">
             <p>Thank You</p>
           </button>
 
-          {user.length && user.role === "ADMIN" && (
+          {user && user.role === "ADMIN" && (
             <Link to={"/allusers"}>
               <button
                 onClick={() => localStorage.setItem("path", "/allusers")}
