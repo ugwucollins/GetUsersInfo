@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 export const { VITE_API_URL } = import.meta.env;
 
-const Home = ({ setuser, setemail }: any) => {
+const Home = ({ setuser }: any) => {
   const [formData, setformData] = useState({
     title: "",
     firstName: "",
@@ -34,7 +34,7 @@ const Home = ({ setuser, setemail }: any) => {
     } else {
       const message = "Year is Over";
       console.log(message);
-      localStorage.setItem("year", JSON.stringify(year));
+      localStorage.setItem("year", JSON.stringify(Years));
 
       return false;
     }
@@ -145,7 +145,7 @@ const Home = ({ setuser, setemail }: any) => {
                 htmlFor="surName"
                 className="font-bold mb-1 py-0.5 text-left w-full"
               >
-                sur Name
+                surname
               </label>
 
               <input
