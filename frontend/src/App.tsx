@@ -57,7 +57,7 @@ const App = () => {
         <Route path="/" element={<Home setuser={setuser} />} />
         {user && (
           <>
-            <Route path="/dashboard" element={<Dashboard user={user} />} />
+            <Route path="/dashboard" element={<Dashboard />} />
           </>
         )}
 
