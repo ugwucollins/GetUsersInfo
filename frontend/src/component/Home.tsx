@@ -25,7 +25,7 @@ const Home = ({ setuser }: any) => {
     const ChecYear = date.getFullYear();
     const lastElement = year[year.length - 1];
 
-    if (ChecYear > +lastElement.title) {
+    if (ChecYear > +lastElement&&+lastElement.title) {
       const newDates = date.getFullYear() + 1;
       const title: any = { title: newDates.toLocaleString() };
       const newDate = [...year, title];
