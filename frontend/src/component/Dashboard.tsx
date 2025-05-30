@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
+import {  useState } from "react";
 
 const Dashboard = () => {
-  const location: any = localStorage.getItem("path");
+  const userName: any = localStorage.getItem("user");
   const [user, setuser]: any = useState(JSON.parse(userName));
   setuser
   return (
