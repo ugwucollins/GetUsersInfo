@@ -5,10 +5,10 @@ import App from "./App.tsx";
 import { ToastContainer } from "react-toastify";
 import { BrowserRouter as Router } from "react-router-dom";
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>
-    <Router>
+  <Router>
+    <StrictMode>
       <App />
       <ToastContainer />
-    </Router>
-  </StrictMode>
+    </StrictMode>
+  </Router>
 );

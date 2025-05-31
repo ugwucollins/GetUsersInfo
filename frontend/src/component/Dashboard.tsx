@@ -12,7 +12,7 @@ const Dashboard = () => {
           <span className="font-semibold">
             Welcome, {user && user.firstName}
           </span>
-          <p>Your Information Has been Recoreded</p>
+          <p>Your Information Has been Recorded</p>
           <button className="w-full mt-3 rounded-full hover:shadow-lg hover:drop-shadow font-semibold hover:font-bold bg-black text-white py-2 px-4 transition-all duration-200">
             <p>Thank You</p>
           </button>
