@@ -25,7 +25,7 @@ const Home = ({ setuser }: any) => {
     const ChecYear = date.getFullYear();
     const lastElement = year[year.length - 1];
 
-    if (ChecYear > +lastElement&&+lastElement.title) {
+    if (ChecYear > +lastElement && +lastElement.title) {
       const newDates = date.getFullYear() + 1;
       const title: any = { title: newDates.toLocaleString() };
       const newDate = [...year, title];
@@ -41,6 +41,7 @@ const Home = ({ setuser }: any) => {
   }
   useEffect(() => {
     addOneYear();
+    localStorage.setItem("year", JSON.stringify(Years));
   }, []);
 
   const HandleSubmit = async (e: any) => {
@@ -94,8 +95,9 @@ const Home = ({ setuser }: any) => {
             LGA: "",
             year: "",
           });
-          localStorage.setItem("path", "/dashboard");
-          router("/dashboard");
+          const path = "/dashboard";
+          localStorage.setItem("path", JSON.stringify(path));
+          router(path);
         } else {
           toast.error(datas.message);
         }

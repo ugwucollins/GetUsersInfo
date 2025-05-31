@@ -88,9 +88,10 @@ const Users = ({ filterUsers, setfilterUsers }: any) => {
                 <td className="px-2.5 capitalize whitespace-nowrap pt-2">
                   <Link to={`/allusers/${user._id}`}>
                     <button
-                      onClick={() =>
-                        localStorage.setItem("path", `/allusers/${user._id}`)
-                      }
+                      onClick={() => {
+                        const path = "/allusers/" + user._id;
+                        localStorage.setItem("path", JSON.stringify(path));
+                      }}
                       className="bg-black hover:rounded-full text-white py-3.5 hover:shadow-md hover:drop-shadow px-4 font-medium hover:font-semibold rounded-lg"
                     >
                       <p>View Details</p>

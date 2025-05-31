@@ -7,7 +7,8 @@ import UsersDetails from "./component/UsersDetails";
 
 const App = () => {
   const userName: any = localStorage.getItem("user");
-  const location: any = localStorage.getItem("path");
+  const paths: any = localStorage.getItem("path");
+  const location: any = JSON.parse(paths);
   const [user, setuser]: any = useState(JSON.parse(userName));
   const [filterUsers, setfilterUsers] = useState([]);
 
@@ -39,12 +40,14 @@ const App = () => {
   useEffect(() => {
     if (!user) {
       router("/");
+    } else if (user && user.role === "ADMIN") {
+      const path = "/allusers";
+      localStorage.setItem("path", JSON.stringify(path));
     } else {
       if (user.length && user) {
         router(location);
-      }else{
-                router(location);
-
+      } else {
+        router(location);
       }
     }
 

@@ -14,8 +14,9 @@ const UsersDetails = ({ filterUsers }: any) => {
 
   useEffect(() => {
     if (!user.length) {
-      router("/allusers");
-      localStorage.setItem("path", `/allusers`);
+      const path = "/allusers";
+      localStorage.setItem("path", JSON.stringify(path));
+      router(path);
     }
     setUsers;
   }, [user]);
@@ -38,9 +39,9 @@ const UsersDetails = ({ filterUsers }: any) => {
       const datas = await res.json();
       if (datas.success) {
         toast.success(`${user[0] && user[0].firstName} ${datas.message}`);
-
-        // router("/allusers");
-        localStorage.setItem("path", `/allusers`);
+        const path = "/allusers";
+        localStorage.setItem("path", JSON.stringify(path));
+        router(path);
       } else {
         toast.error(datas.message);
       }

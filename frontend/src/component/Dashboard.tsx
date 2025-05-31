@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import {  useState } from "react";
+import { useState } from "react";
 
 const Dashboard = () => {
   const userName: any = localStorage.getItem("user");
   const [user, setuser]: any = useState(JSON.parse(userName));
-  setuser
+  setuser;
   return (
     <>
       <div className="w-full min-h-screen bg-black/10 flex justify-center items-center">
@@ -20,7 +20,10 @@ const Dashboard = () => {
           {user && user.role === "ADMIN" && (
             <Link to={"/allusers"}>
               <button
-                onClick={() => localStorage.setItem("path", "/allusers")}
+                onClick={() => {
+                  const path = "/allusers";
+                  localStorage.setItem("path", JSON.stringify(path));
+                }}
                 className="w-full mt-3 rounded-full hover:shadow-lg hover:drop-shadow font-semibold hover:font-bold bg-black text-white py-2 px-4 transition-all duration-200"
               >
                 <p>View All Users</p>
